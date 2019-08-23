@@ -22,7 +22,7 @@
         </record>
 
 
-        <record id="action_invoice_pending" model="ir.actions.act_window">
+        <record id="action_subcontractor_clearence_bill" model="ir.actions.act_window">
             <field name="name">Vendor Bills</field>
             <field name="res_model">account.invoice</field>
             <field name="view_type">form</field>
@@ -43,13 +43,13 @@
                 </p>
             </field>
         </record>
-        
-        <record id="action_subcontractor_clearence_bill" model="ir.actions.act_window">
+        <!---->
+        <!--<record id="action_subcontractor_clearence_bill" model="ir.actions.act_window">
            <field name="name">اعتماد تنفيذ اعمال لمقاول باطن</field>
             <field name="res_model">account.invoice</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-        </record>
+        </record>-->
 
         <record id="action_subcontractor_clearence_order" model="ir.actions.act_window">
             <field name="name">امراسنادالاعمال لمقاول باطن</field>
@@ -113,7 +113,7 @@
 
         <menuitem
 
-                id="menu_root_clearence"
+                id="menu_root_clearence_invoices"
                 name=" قائمة المستخلصات "
                 parent="menu_root_clearence"
 
@@ -126,7 +126,7 @@
                 id="menu_root_child_clearence_invoice"
                 name=" اصدارالمستخلصات "
                 parent="menu_root_clearence_invoices"
-                action="action_clearence_sale_order"
+                action="action_clearence_order"
 
         />
 
