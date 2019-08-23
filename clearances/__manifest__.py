@@ -1,8 +1,8 @@
 {
     'name': 'clearances',
     'version': '12.0.0.1',
-    'summary': """ """,
-    'Description': """ """,
+    'summary': """ Contracting Clearence""",
+    'Description': """ this APP allows you create customer contracting clearences order annd when you receive approved from clienet  then ypu can confirm this clearence to invoice,also ypu can create other order to your sub contractore and confirm that to bill and print attached clearence report""",
     'Category': 'projects',
     'author': 'Zero Systems',
     'company': 'Zero for Information Systems',
