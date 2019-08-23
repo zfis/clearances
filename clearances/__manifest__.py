@@ -10,7 +10,7 @@
     'email': "sales@erpzero.com",
     'depends': ['base','sale','purchase','account'],
     'data': ['views/view.xml','views/clearences_report.xml'],
-    'images': ['icon.png'],
+    'images': ['logo.png'],
     'demo': [],
     'installable': True,
     'auto_install': False,
