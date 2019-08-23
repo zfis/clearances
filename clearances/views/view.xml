@@ -1,0 +1,145 @@
+<odoo>
+    <data>
+
+
+
+        <record id="view_form_inherit_account_invoice_report_clearance" model="ir.ui.view">
+            <field name="name">account_invoice_inherit_clearance</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_due']" position="after">
+                    <field name="types_of_work"/>
+                    <field name="operation"/>
+
+                </xpath>
+                <xpath expr="//field[@name='purchase_id']" position="after">
+
+                    <field name="clearance"/>
+                </xpath>
+
+            </field>
+        </record>
+
+
+        <record id="action_invoice_pending" model="ir.actions.act_window">
+            <field name="name">Vendor Bills</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('type','=','in_invoice')]</field>
+            <field name="context">{'default_type':'in_invoice', 'type':'in_invoice', 'journal_type': 'purchase'}</field>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a vendor bill.
+                </p>
+                <p>
+                    Use this menu to control the invoices to be received from your
+                    vendors. When registering a new bill, set the purchase order
+                    and Odoo will fill the bill automatically according to ordered
+                    or received quantities.
+                </p>
+            </field>
+        </record>
+        
+        <record id="action_subcontractor_clearence_bill" model="ir.actions.act_window">
+           <field name="name">اعتماد تنفيذ اعمال لمقاول باطن</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_subcontractor_clearence_order" model="ir.actions.act_window">
+            <field name="name">امراسنادالاعمال لمقاول باطن</field>
+            <field name="res_model">purchase.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_clearence_invoice" model="ir.actions.act_window">
+            <field name="name">اصدار مستخلص اعمال لعميل</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_clearence_order" model="ir.actions.act_window">
+            <field name="name">اعتماد تنفيذالاعمال لعميل</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem
+
+                id="menu_root_clearence"
+                name="المستخلصات"
+
+
+        />
+
+        
+        <menuitem
+
+                id="menu_root_main"
+                name=" المستخلصات الرئيسية"
+                parent="menu_root_clearence"
+
+
+        />
+
+
+        <menuitem
+
+                id="menu_root_child_subcontractor_clearence_order"
+                name=" امر تنفيذ اعمال لمقاول باطن"
+                parent="menu_root_main"
+                action="action_subcontractor_clearence_order"
+
+        />
+
+        <menuitem
+
+                id="menu_root_child"
+                name=" اعتماد تنفيذ اعمال لعميل "
+                parent="menu_root_main"
+                action="action_clearence_order"
+
+        />
+
+
+        <menuitem
+
+                id="menu_root_clearence"
+                name=" قائمة المستخلصات "
+                parent="menu_root_clearence"
+
+
+        />
+
+
+        <menuitem
+
+                id="menu_root_child_clearence_invoice"
+                name=" اصدارالمستخلصات "
+                parent="menu_root_clearence_invoices"
+                action="action_clearence_sale_order"
+
+        />
+
+
+        <menuitem
+
+                id="menu_root_child_clearence_bill"
+                name=" تسجيل واعتماد مستخلصات مقاولي الباطن "
+                parent="menu_root_clearence_invoices"
+                action="action_subcontractor_clearence_bill"
+
+        />
+
+
+    </data>
+</odoo>
