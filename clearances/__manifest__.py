@@ -8,7 +8,7 @@
     'company': 'Zero for Information Systems',
     'website': "https://www.erpzero.com",
     'email': "sales@erpzero.com",
-    'depends': ['base','sale','purchase','account','Project'],
+    'depends': ['base','sale','purchase','account','project'],
     'data': ['views/view.xml','views/clearences_report.xml'],
     'images': ['logo.PNG','icon.png'],
     'demo': [],
