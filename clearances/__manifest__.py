@@ -1,8 +1,8 @@
 {
     'name': 'clearances_ee',
     'version': '12.0.0.1',
-    'summary': """" odoo Contracting and clearences enterprise """",
-    'Description': """this app allows you create clearence order and invoice for customer and subcontractor""",
+    'summary': """ odoo Contracting and clearences enterprise """,
+    'Description': """"this app allows you create clearence order and invoice for customer and subcontractor"""",
     'Category': 'project',
     'author': 'Zero Systems',
     'company': 'Zero for Information Systems',
